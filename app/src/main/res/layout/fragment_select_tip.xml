@@ -1,13 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editText"
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="137dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/relativeLayoutRadioButtons">
+
+        <RadioButton
+            android:id="@+id/radioB15Percent"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="15%"
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <RadioButton
+            android:id="@+id/radioB18Percent"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="18%"
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/radioB15Percent" />
+
+        <RadioButton
+            android:id="@+id/radioB20Percent"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="20%"
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/radioB18Percent" />
+        <RadioButton
+            android:id="@+id/radioBCustom"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="Custom"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/radioB20Percent" />
+
+    </RelativeLayout>
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Hello my friend" />
-</LinearLayout>
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_style"
+        android:text="Calculate"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/relativeLayoutRadioButtons"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
