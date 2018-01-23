@@ -10,6 +10,9 @@ import com.example.ortiz.tipcalculator.fragments.FragmentSelectTip;
 
 /**
  * Created by ortiz on 1/22/2018.
+ *
+ * Adapter that will contain the control the view layout of the tab activity
+ * once a new tab has been selected an instance of a class will be passed of the appropriate class
  */
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -24,14 +27,11 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         switch (position){
             case 0:
-                FragmentEnterBill tab1 = new FragmentEnterBill();
-                return tab1;
+                return new FragmentEnterBill(); //will return an instance of a class that controls the first tab
             case 1:
-                FragmentSelectTip tab2 = new FragmentSelectTip();
-                return tab2;
+                return new FragmentSelectTip(); //will return an instance of a class that controls the second tab
             case 2:
-                FragmentDisplayTotal tab3 = new FragmentDisplayTotal();
-                return tab3;
+                return new FragmentDisplayTotal(); //will return an instance of a class that controls the third tab
             default:
                 return null;
 

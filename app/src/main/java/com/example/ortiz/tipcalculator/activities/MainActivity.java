@@ -43,24 +43,6 @@ public class MainActivity extends BaseActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
 
-        /**
-         *
-         *
-         * TEST FOR THE BRANCH... Lets try this one more time!
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         * 
-         */
-
-
     }
 
 
