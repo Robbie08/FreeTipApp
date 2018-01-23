@@ -41,6 +41,30 @@ public class MainActivity extends BaseActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+
+        /**
+         *
+         *
+         * TEST FOR THE BRANCH
+         *
+         *
+         */
+
+        /**
+         *
+         *
+         * TEST FOR THE BRANCH
+         *
+         *
+         */
+        /**
+         *
+         *
+         * TEST FOR THE BRANCH
+         *
+         *
+         */
     }
 
 
