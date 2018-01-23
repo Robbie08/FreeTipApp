@@ -1,13 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Hello puppy" />
-</LinearLayout>
+        android:orientation="horizontal"
+        android:id="@+id/fragment_display_total_relative_layout_total_amount"
+        android:layout_above="@+id/fragment_display_total_list_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/fragment_display_total_tvTotalAmount"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorText"
+            android:text="00.00"
+            android:paddingStart="10dp"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="19dp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/fragment_display_total_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:textColor="@color/colorPrimary"
+        android:text="Done"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/fragment_display_total_list_view"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

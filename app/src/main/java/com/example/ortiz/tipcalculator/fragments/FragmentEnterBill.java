@@ -1,8 +1,10 @@
 package com.example.ortiz.tipcalculator.fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ortiz.tipcalculator.R;
@@ -37,8 +40,9 @@ public class FragmentEnterBill extends BaseFragment {
     private View rootView;
     View mainView;
     ViewPager viewPager;
+    Snackbar snackbar;
 
-    CoordinatorLayout coordinatorLayout;
+
 
     @BindView(R.id.fragment_main_button_no)
     Button buttonNo;
@@ -63,10 +67,9 @@ public class FragmentEnterBill extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_enter_bill,container,false);
-        mainView = inflater.inflate(R.layout.activity_main,container,false);
+        mainView = getActivity().findViewById(android.R.id.content);
         ButterKnife.bind(this,rootView);
 
-        coordinatorLayout = (CoordinatorLayout) mainView.findViewById(R.id.main_content);
         viewPager = (ViewPager) getActivity().findViewById(R.id.container); // on create will set out view pager
 
 
@@ -85,12 +88,29 @@ public class FragmentEnterBill extends BaseFragment {
             viewPager.setCurrentItem(1); //pass in the location to be set at the second tab(SelectTip)
         }
         else {
-            Toast.makeText(getContext(),"Please enter a total bill",Toast.LENGTH_LONG).show();
+            snackbar = Snackbar.make(mainView,"Please enter a total bill amount",Snackbar.LENGTH_LONG);
+            View sbView = snackbar.getView();
+            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(getResources().getColor(R.color.colorPrimary));
+            snackbar.show();
         }
     }
 
     @OnClick(R.id.fragment_main_button_yes)
     public void setButtonYes(){
-        Toast.makeText(getContext(),"Yes button is working",Toast.LENGTH_LONG).show();
+        String bill = etBillAmount.getText().toString().trim();
+
+        if(!(bill.isEmpty()) && !(Objects.equals(bill, "00.00")) && etBillAmount != null){
+            //condition if the value of the bill is 0 or null
+            Log.d("BILL_AMT" , " Value is: " +bill);
+            viewPager.setCurrentItem(1); //pass in the location to be set at the second tab(SelectTip)
+        }
+        else {
+            snackbar = Snackbar.make(mainView,"Please enter a total bill amount",Snackbar.LENGTH_LONG);
+            View sbView = snackbar.getView();
+            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(getResources().getColor(R.color.colorPrimary));
+            snackbar.show();
+        }
     }
 }
