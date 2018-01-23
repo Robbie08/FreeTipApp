@@ -38,6 +38,19 @@ public class MainActivity extends BaseActivity {
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
+        /**
+         * Did this branch work....?
+         *
+         *
+         *
+         *
+         *
+         * ...we will find out
+         *
+         *
+         * 
+         * ///////
+         */
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
