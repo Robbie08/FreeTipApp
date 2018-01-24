@@ -1,9 +1,8 @@
 package com.example.ortiz.tipcalculator.fragments;
 
-import android.graphics.Color;
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -13,9 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ortiz.tipcalculator.R;
+import com.example.ortiz.tipcalculator.dialog.DialogTotalPeople;
 
 import java.util.Objects;
 
@@ -103,7 +102,8 @@ public class FragmentEnterBill extends BaseFragment {
         if(!(bill.isEmpty()) && !(Objects.equals(bill, "00.00")) && etBillAmount != null){
             //condition if the value of the bill is 0 or null
             Log.d("BILL_AMT" , " Value is: " +bill);
-            viewPager.setCurrentItem(1); //pass in the location to be set at the second tab(SelectTip)
+            DialogFragment dialogFragment = DialogTotalPeople.newInstance();
+            dialogFragment.show(getActivity().getFragmentManager(),DialogTotalPeople.class.getSimpleName());
         }
         else {
             snackbar = Snackbar.make(mainView,"Please enter a total bill amount",Snackbar.LENGTH_LONG);
